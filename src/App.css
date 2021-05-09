@@ -1,0 +1,66 @@
+
+:root{
+  /* ****************  size  **************** */
+  font-size: 8px;
+  margin: 8px;
+  padding: 8px;
+  --min-width:295px;
+  --max-width:668px;
+  /* ****************  color  **************** */
+  --pure-white:#ffffff;
+  --error-color:#EB5757;
+  --currect-color:#27AE60;
+  --ESB-Yellow:#FFB820;
+  --ESB-Pink:#FF006F;
+  --ESB-white1:#F8F7FB;
+  --ESB-White2:#F1EFF6;
+  --ESB-Gray1:#D6D6D6;
+  --ESB-Gray2:#969696;
+  --ESB-Gray3:#A09CAD;
+  --ESB-Gray4:#B7B3C5;
+  --ESB-Font1:#564E70;
+  --ESB-Font2:#7C788A;
+  --ESB-Green:#7BE380;
+  --ESB-Blue:#4C02CC;
+}
+/**************  all elements  **************/
+*{
+  font-family: iransansdn;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  font-size: 1.75rem;
+  text-align: right;
+}
+/**************  body  **************/
+body , html {
+  padding: 0 !important;
+  margin: 0 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--ESB-White2);
+}
+/**************  critical elements  **************/
+h1{
+  font-size: 2.75rem;
+}
+h2{
+  font-size: 2.5rem;
+}
+h3{
+  font-size: 2.25rem;
+}
+/**************  global style  **************/
+
+.ant-form-item-explain {
+  visibility: hidden;
+} 
+
+.ant-form-item-explain-error{
+  color: var(--error-color);
+  padding: 2rem 0;
+  text-align: center;
+  visibility: visible;
+}
