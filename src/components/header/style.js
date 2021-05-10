@@ -8,7 +8,7 @@ const Style = Styled.div`
 const HeaderStyle = Styled.header`
     padding:10px;
     background-color:#f5f5f5;
-    margin-right:300px
+    margin-right:300px;
 `;
 
 export { Style, HeaderStyle };
