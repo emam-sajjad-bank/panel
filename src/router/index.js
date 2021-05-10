@@ -8,6 +8,7 @@ import history from "./history";
 
 //pages
 import LoginPage from "../pages/login";
+import Users from "../pages/users";
 
 //styles
 
@@ -16,6 +17,9 @@ const MainRouter = () => {
     <Router history={history}>
       <Route path="/login">
         <LoginPage />
+      </Route>
+      <Route path="/">
+        <Users />
       </Route>
     </Router>
   );

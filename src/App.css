@@ -1,30 +1,29 @@
-
-:root{
+:root {
   /* ****************  size  **************** */
   font-size: 8px;
   margin: 8px;
   padding: 8px;
-  --min-width:295px;
-  --max-width:668px;
+  --min-width: 295px;
+  --max-width: 668px;
   /* ****************  color  **************** */
-  --pure-white:#ffffff;
-  --error-color:#EB5757;
-  --currect-color:#27AE60;
-  --ESB-Yellow:#FFB820;
-  --ESB-Pink:#FF006F;
-  --ESB-white1:#F8F7FB;
-  --ESB-White2:#F1EFF6;
-  --ESB-Gray1:#D6D6D6;
-  --ESB-Gray2:#969696;
-  --ESB-Gray3:#A09CAD;
-  --ESB-Gray4:#B7B3C5;
-  --ESB-Font1:#564E70;
-  --ESB-Font2:#7C788A;
-  --ESB-Green:#7BE380;
-  --ESB-Blue:#4C02CC;
+  --pure-white: #ffffff;
+  --error-color: #eb5757;
+  --currect-color: #27ae60;
+  --ESB-Yellow: #ffb820;
+  --ESB-Pink: #ff006f;
+  --ESB-white1: #f8f7fb;
+  --ESB-White2: #f1eff6;
+  --ESB-Gray1: #d6d6d6;
+  --ESB-Gray2: #969696;
+  --ESB-Gray3: #a09cad;
+  --ESB-Gray4: #b7b3c5;
+  --ESB-Font1: #564e70;
+  --ESB-Font2: #7c788a;
+  --ESB-Green: #7be380;
+  --ESB-Blue: #4c02cc;
 }
 /**************  all elements  **************/
-*{
+* {
   font-family: iransansdn;
   padding: 0;
   margin: 0;
@@ -33,34 +32,64 @@
   border: none;
   font-size: 1.75rem;
   text-align: right;
+  list-style-type: none;
 }
 /**************  body  **************/
-body , html {
+body,
+html {
   padding: 0 !important;
   margin: 0 !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--ESB-White2);
+  background: #fff;
 }
 /**************  critical elements  **************/
-h1{
+h1 {
   font-size: 2.75rem;
 }
-h2{
+h2 {
   font-size: 2.5rem;
 }
-h3{
+h3 {
   font-size: 2.25rem;
 }
 /**************  global style  **************/
 
 .ant-form-item-explain {
   visibility: hidden;
-} 
+}
 
-.ant-form-item-explain-error{
+.ant-form-item-explain-error {
   color: var(--error-color);
   padding: 2rem 0;
   text-align: center;
   visibility: visible;
+}
+
+section {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1000px;
+}
+
+.flex {
+  display: flex;
+}
+
+.nav-link {
+  padding: 10px;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navLink {
+  color: #fff;
 }
