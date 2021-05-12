@@ -14,8 +14,8 @@ const StyledButton = Styled(Button)`
     border: none;
     overflow:hidden;
     &.ant-btn-primary{
-        background:var(--ESB-Pink);
-        color:var(--ESB-White2);
+        background:var(--Pink);
+        color:var(--White2);
     }
     span{
         z-index:3;

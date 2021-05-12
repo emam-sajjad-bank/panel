@@ -9,18 +9,18 @@
   --pure-white: #ffffff;
   --error-color: #eb5757;
   --currect-color: #27ae60;
-  --ESB-Yellow: #ffb820;
-  --ESB-Pink: #ff006f;
-  --ESB-white1: #f8f7fb;
-  --ESB-White2: #f1eff6;
-  --ESB-Gray1: #d6d6d6;
-  --ESB-Gray2: #969696;
-  --ESB-Gray3: #a09cad;
-  --ESB-Gray4: #b7b3c5;
-  --ESB-Font1: #564e70;
-  --ESB-Font2: #7c788a;
-  --ESB-Green: #7be380;
-  --ESB-Blue: #4c02cc;
+  --Yellow: #ffb820;
+  --Pink: #ff006f;
+  --white1: #f8f7fb;
+  --White2: #f1eff6;
+  --Gray1: #d6d6d6;
+  --Gray2: #969696;
+  --Gray3: #a09cad;
+  --Gray4: #b7b3c5;
+  --Font1: #564e70;
+  --Font2: #7c788a;
+  --Green: #7be380;
+  --Blue: #4c02cc;
 }
 /**************  all elements  **************/
 * {
@@ -64,32 +64,4 @@ h3 {
   padding: 2rem 0;
   text-align: center;
   visibility: visible;
-}
-
-section {
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
-
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1000px;
-}
-
-.flex {
-  display: flex;
-}
-
-.nav-link {
-  padding: 10px;
-  display: block;
-}
-
-a {
-  text-decoration: none;
-}
-
-.navLink {
-  color: #fff;
 }

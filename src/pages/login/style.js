@@ -32,7 +32,7 @@ const LoginBox = Styled.div`
     height: 50vh;
     max-width: 400px;
     max-height: 400px;
-    background: var(--ESB-white1);
+    background: var(--white1);
     box-shadow: var(--main-box-shadow);
     padding: 5rem 2rem;
     justify-content: space-evenly;

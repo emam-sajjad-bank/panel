@@ -9,17 +9,23 @@ import history from "./history";
 //pages
 import LoginPage from "../pages/login";
 import Users from "../pages/users";
+import PrivetRoute from "./privetRoute";
 
 //styles
 
 const MainRouter = () => {
   return (
     <Router history={history}>
-      <Route path="/login">
+      <Route exact path="/login">
         <LoginPage />
       </Route>
-      <Route path="/">
-        <Users />
+      <Route exact path="/users">
+        <PrivetRoute>
+          <Users />
+        </PrivetRoute>
+      </Route>
+      <Route exact path="*">
+        <PrivetRoute />
       </Route>
     </Router>
   );

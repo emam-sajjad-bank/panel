@@ -40,7 +40,7 @@ const Customtable = ({
         setLoading(false);
         setFirstLoad(false);
         dispatch(LoadingEndAction());
-      }catch{
+      }catch(){
         setFirstLoad(false);
         setLoading(false);
         dispatch(LoadingEndAction());

@@ -7,7 +7,7 @@ const StyledInput = Styled(Input)`
     background: var(--pure-white);
     width: 100%;
     min-width:var(--min-width);
-    color: var(--ESB-Font2);
+    color: var(--Font2);
     text-align:${props => props.align==="rtl" ? "right" : "left"};
     display: flex;
     flex-direction:${props => props.align==="rtl" ? "row" : "row-reverse"} ;
@@ -19,7 +19,7 @@ const StyledInput = Styled(Input)`
         box-shadow: 0 0 0 2px rgb(255 0 111 / 0.1);
       }
     .ant-input-suffix{
-      color :${props=>props.value === 0 ? "color: var(--ESB-Font2);" : "color: var(--ESB-Font);"}
+      color :${props=>props.value === 0 ? "color: var(--Font2);" : "color: var(--Font);"}
     }
     .ant-input:focus, input.ant-input-focused{
       border:none;
