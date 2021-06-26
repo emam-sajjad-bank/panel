@@ -1,7 +1,7 @@
 import Styled from 'styled-components';
  
 const Style = Styled.div`
-    box-shadow:var(--main-box-shadow);
+    box-shadow:var(--box-shadow);
     border-radius: 5px;
     background-color: #ffffff;
     align-items: center;
@@ -16,9 +16,9 @@ const Style = Styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
-
         div.section-title {
-            font-size: 14px;
+            font-size: 2rem;
+            font-weight:bold;
         }
         
         div.actions{

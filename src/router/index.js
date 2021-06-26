@@ -10,6 +10,8 @@ import history from "./history";
 import LoginPage from "../pages/login";
 import Users from "../pages/users";
 import PrivetRoute from "./privetRoute";
+import MainHOC from "../HOC";
+import SingleUserPage from "../pages/user";
 
 //styles
 
@@ -22,6 +24,21 @@ const MainRouter = () => {
       <Route exact path="/users">
         <PrivetRoute>
           <Users />
+        </PrivetRoute>
+      </Route>
+      <Route exact path="/user/:id">
+        <PrivetRoute>
+          <SingleUserPage />
+        </PrivetRoute>
+      </Route>
+      <Route exact path="/">
+        <PrivetRoute>
+          <MainHOC >
+            <h1>
+            hi
+            </h1>
+          </MainHOC>
+
         </PrivetRoute>
       </Route>
       <Route exact path="*">

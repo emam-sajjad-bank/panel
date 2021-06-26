@@ -11,12 +11,17 @@ import authenticator from './authenticator';
  
 const PrivetRoute = ({children}) =>{
   const history = useHistory();
-
-  if(authenticator()) return history.location.pathname === "/login" ?
-    <Redirect to={{ pathname: "/" }} /> :
-    children;
-  else return <Redirect to={{ pathname: "/login" }} />;
-
+  if(authenticator()){ 
+    if (history.location.pathname === "/login") {
+      return <Redirect to={{ pathname: "/" }} />;
+    }
+    else { 
+      return <> {children} </>;
+    }
+  }
+  else {
+    return <Redirect to={{ pathname: "/login" }} />;
+  }
 };
  
 PrivetRoute.propTypes = {

@@ -1,7 +1,7 @@
 //node modules
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { NavLink } from 'react-router-dom';
 //components
 
 //utils
@@ -10,10 +10,21 @@ import PropTypes from 'prop-types';
 import { StyledSideBar } from './style';
 
 
-const SideBar = ({data}) =>{
+
+const SideBar = () =>{
   return(
-    <StyledSideBar>      
-      {data}
+    <StyledSideBar>
+      <div className="welcome">
+        {"داود هبابی"}
+        {" "}
+        عزیز خوش آمدید
+      </div> 
+      <NavLink to="/" exact activeClassName="active">
+      صفحه اصلی
+      </NavLink>
+      <NavLink to="/users" exact activeClassName="active">
+      لیست کاربران
+      </NavLink>
     </StyledSideBar>
   );
 };

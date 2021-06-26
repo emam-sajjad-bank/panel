@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Header from "./header";
 import SideBar from "./sideBar";
 import { useHistory } from "react-router";
+import { StyledContainer } from "./style";
 
 //components
 
@@ -18,14 +19,15 @@ const MainHOC = ({ children }) => {
     <>
       {
         history.location.pathname === "/login" ?
-          null :
+          <>{children}</> :
           <>
             <Header />
             <SideBar />
+            <StyledContainer>
+              {children}
+            </StyledContainer>
           </>
       }
-
-      {children}
     </>
   );
 };

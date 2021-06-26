@@ -1,7 +1,7 @@
 
 
 const authenticator = () =>{
-  if(localStorage.getItem("verifyExp")) return true;
+  if(localStorage.getItem("token")) return true;
   else return false;
 };
 export default authenticator;

@@ -15,7 +15,7 @@ const GlobalModal = ({modalProps ={} , buttonProps={} , children , modalIsOpen }
       { isOpen &&
         <Helmet>
           <title>
-          شناسه | {' '}
+          صندوق قرض الحسنه امام سجاد | {' '}
             {
               modalProps.title ?
                 typeof modalProps.title === 'string' ?

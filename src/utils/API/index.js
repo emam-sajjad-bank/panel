@@ -1,14 +1,14 @@
 import axios from "axios";
-
+import jwt_decode from "jwt-decode";
 // import { LogOut } from "../LogOut";
 
 // eslint-disable-next-line no-undef
-let baseURL = "http://emam-sajjad-bank.com";
+let baseURL = "http://localhost:3000";
 
 
 
 const config = {
-  baseURL: `${baseURL}/api/`,
+  baseURL: `${baseURL}/api/${localStorage.getItem("token") ? jwt_decode(localStorage.getItem("token")).role : ""}`,
   headers: {
     "Content-Type": "application/json",
   },
@@ -20,7 +20,7 @@ const token = () => localStorage.getItem("token");
 
 axiosInstance.interceptors.request.use((config) => {
   if (token()) {
-    config.headers.Authorization = `Bearer ${token()}`;
+    config.headers.token = `${token()}`;
   }
   return config;
 });

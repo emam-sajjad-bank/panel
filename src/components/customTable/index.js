@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { Table } from 'antd';
+
 import { LoadingOutlined } from '@ant-design/icons';
 
 
-import { LoadingStartAction, LoadingEndAction } from '../../redux/app/actions';
 import history from '../../router/history';
 import { CustomPagination } from './customPagination';
+
+import { StyledTable } from './style';
  
 const Customtable = ({
   withRouter,
@@ -20,7 +20,7 @@ const Customtable = ({
   style,
   containerStyle
 }) =>{
-  const dispatch = useDispatch();
+
   
   const [ data , setData ] = useState([]);
   const [ page , setPage ] = useState(1);
@@ -28,26 +28,23 @@ const Customtable = ({
   const [ loading , setLoading ] = useState(false);
   const [ firstLoad , setFirstLoad ] = useState(true);
 
-  function fetchData(page){
+  const  fetchData = async(page) =>{
     setLoading(true);
-    if(firstLoad) dispatch(LoadingStartAction());
-    setTimeout(async()=>{
-      try{
-        let res = await fetchDatafunc(page);
-        const { data : { data : { total , data }}} = res ;
-        setData(data);
-        setTotal(total);
-        setLoading(false);
-        setFirstLoad(false);
-        dispatch(LoadingEndAction());
-      }catch(){
-        setFirstLoad(false);
-        setLoading(false);
-        dispatch(LoadingEndAction());
-      }
-    } , 3000);
 
-  }
+    try{
+      let res = await fetchDatafunc(page);
+      const { data : { data , item_count}} = res ;
+      setData(data);
+      setTotal(item_count);
+      setLoading(false);
+      setFirstLoad(false);
+
+    }catch(err){
+      setFirstLoad(false);
+      setLoading(false);
+    }
+
+  };
   useEffect(() => {
     if(!firstLoad){
       fetchData(page);
@@ -75,7 +72,7 @@ const Customtable = ({
 
   return(
     <div style={containerStyle}>
-      <Table 
+      <StyledTable 
         style={style}
         rowKey={rowKey}
         size={size}

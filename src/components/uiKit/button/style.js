@@ -13,6 +13,8 @@ const StyledButton = Styled(Button)`
     justify-content: center;
     border: none;
     overflow:hidden;
+    border-radius:0;
+    height: auto;
     &.ant-btn-primary{
         background:var(--Pink);
         color:var(--White2);

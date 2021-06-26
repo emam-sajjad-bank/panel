@@ -5,6 +5,7 @@ import { StyledHeader } from "./style";
 const Header = () => {
   return (
     <StyledHeader>
+
       <Navbar />
     </StyledHeader>
   );
