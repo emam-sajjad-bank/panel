@@ -42,6 +42,10 @@ const SingleUserPage = () =>{
     getUserById();
   }, []);
 
+
+
+
+  
   return(
     <MainHOC>
       <CustomSection 
