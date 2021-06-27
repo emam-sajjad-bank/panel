@@ -9,7 +9,7 @@ import { notification } from 'antd';
 const ErrorAndAlert = data =>{
   const {message , type , description} = data;
   const config = {
-    placement: 'bottomLeft',
+    placement: 'bottomRight',
     duration: 3,
     message:message,
     description:description,
@@ -22,8 +22,9 @@ const ErrorAndAlert = data =>{
     notification.error(config) :
     notification.success(config);
 };
+
 ErrorAndAlert.propTypes = {
   data: PropTypes.any
 };
- 
+
 export default ErrorAndAlert;

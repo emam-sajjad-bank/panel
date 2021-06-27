@@ -3,6 +3,7 @@ import {InputNumber, Tooltip} from 'antd';
 
 const CustomInputNumber = Styled(InputNumber)`
 position:relative;
+padding-left: 10%;
 &:after{
     content: "ريال";
     position: absolute;

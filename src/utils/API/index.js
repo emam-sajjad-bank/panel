@@ -4,19 +4,19 @@ import jwt_decode from "jwt-decode";
 
 // eslint-disable-next-line no-undef
 let baseURL = "http://localhost:3000";
-
-
-
-const config = {
-  baseURL: `${baseURL}/api/${localStorage.getItem("token") ? jwt_decode(localStorage.getItem("token")).role : ""}`,
-  headers: {
-    "Content-Type": "application/json",
-  },
-};
-
-const axiosInstance = axios.create(config);
-
 const token = () => localStorage.getItem("token");
+
+
+const config = () =>{
+  return {
+    baseURL: `${baseURL}/api/`,
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+}; 
+
+const axiosInstance = axios.create(config());
 
 axiosInstance.interceptors.request.use((config) => {
   if (token()) {
@@ -54,5 +54,12 @@ axiosInstance.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
+
+
+export const role = () =>{
+  const role = token() ? jwt_decode(token()).role : "";
+  return role;
+};
 
 export default axiosInstance;

@@ -66,3 +66,29 @@ h3 {
   text-align: center;
   visibility: visible;
 }
+
+.ant-btn:hover, .ant-btn:focus{
+  color: var(--Pink) !important;
+  border-color: var(--Pink) !important;
+}
+.ant-btn-primary:hover, .ant-btn-primary:focus{
+  color: var(--pure-white) !important;
+}
+.ant-btn-primary{
+  background: var(--Pink) !important;
+  border-color: var(--Pink) !important;
+} 
+.ant-pagination-item:focus-visible, .ant-pagination-item:hover{
+  border-color: var(--Pink) !important;
+}
+.ant-pagination-item-active{
+  border-color: var(--Pink) !important;
+}
+.ant-pagination-item-active a{
+  color: var(--Pink) !important;
+}
+
+
+.ant-notification{
+  z-index: 10000000 !important;
+}
