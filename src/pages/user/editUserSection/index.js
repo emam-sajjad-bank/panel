@@ -24,12 +24,12 @@ const EditUserSection = ({userData}) =>{
       setEditLoading(false);
       ErrorAndAlert({message: "تغییرات با موفقیت ذخیره شد"});
     }catch(err){
-      ErrorAndAlert({message:err.response.message ,type: "error"});
+      ErrorAndAlert({message:err.response.data.message ,type: "error"});
       setEditLoading(false);
     }
   };
 
-  
+
   return(
     <CustomSection 
       title="ویرایش کاربر"

@@ -1,6 +1,7 @@
 import axios from "axios";
 import jwt_decode from "jwt-decode";
-// import { LogOut } from "../LogOut";
+import ErrorAndAlert from "../../components/errorNAlert";
+import history from "../../router/history";
 
 // eslint-disable-next-line no-undef
 let baseURL = "http://localhost:3000";
@@ -44,10 +45,13 @@ axiosInstance.interceptors.response.use(
 
     const { response } = error;
     if (response) {
+      ErrorAndAlert({message:response.data.message ,type:"error"});
+      
       const { status } = response;
       if (status) {
         if (status === 401) {
-          // LogOut();
+          localStorage.clear();
+          history.push("/login");
         }
       }
     }

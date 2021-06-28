@@ -68,24 +68,24 @@ h3 {
 }
 
 .ant-btn:hover, .ant-btn:focus{
-  color: var(--Pink) !important;
-  border-color: var(--Pink) !important;
+  color: var(--Blue) !important;
+  border-color: var(--Blue) !important;
 }
 .ant-btn-primary:hover, .ant-btn-primary:focus{
   color: var(--pure-white) !important;
 }
 .ant-btn-primary{
-  background: var(--Pink) !important;
-  border-color: var(--Pink) !important;
+  background: var(--Blue) !important;
+  border-color: var(--Blue) !important;
 } 
 .ant-pagination-item:focus-visible, .ant-pagination-item:hover{
-  border-color: var(--Pink) !important;
+  border-color: var(--Blue) !important;
 }
 .ant-pagination-item-active{
-  border-color: var(--Pink) !important;
+  border-color: var(--Blue) !important;
 }
 .ant-pagination-item-active a{
-  color: var(--Pink) !important;
+  color: var(--Blue) !important;
 }
 
 

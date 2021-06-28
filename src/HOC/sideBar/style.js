@@ -13,7 +13,7 @@ const StyledSideBar = Styled.div`
     & > a {
         padding:1rem;
         text-decoration: none;
-        color: var(--Pink);
+        color: var(--Blue);
         padding-right: 2rem;
         transition:0.2s all;
         display: flex;
@@ -33,7 +33,7 @@ const StyledSideBar = Styled.div`
                 display: block;
                 width: 10px;
                 height: 10px;
-                background: var(--Pink);
+                background: var(--Blue);
                 border-radius: 100%;
                 margin-left: 1rem;
             }
