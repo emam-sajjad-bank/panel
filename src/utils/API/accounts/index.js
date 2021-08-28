@@ -9,9 +9,17 @@ export const getAccountsByUserIdApi = async (id , page) => {
     throw error;
   }
 };
-export const createAccountsForUserApi = async (id , data) => {
+export const createAccountsForUserApi = async (userId , data) => {
   try {
-    let res = await axiosInstance.post(`${role()}/accounts/user/${id}` , data);
+    let res = await axiosInstance.post(`${role()}/accounts/user/${userId}` , data);
+    return res;
+  } catch (error) {
+    throw error;
+  }
+};
+export const editAccountsForUserApi = async (accountId , data) => {
+  try {
+    let res = await axiosInstance.put(`${role()}/accounts/${accountId}` , data);
     return res;
   } catch (error) {
     throw error;

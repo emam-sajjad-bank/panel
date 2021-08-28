@@ -29,7 +29,7 @@ const Login = () => {
     <MainHOC>
       <Style>
         <Helmet>
-          <title>گاجینو | صفحه ورود</title>
+          <title>صندوق قرض الحسنه امام سجاد | صفحه ورود</title>
         </Helmet>
         <LoginBox>
           <div >
@@ -54,14 +54,13 @@ const Login = () => {
             onChange={e=>setIsAdmin(e.target.checked)}
           >
            ورود به عنوان ادمین
-           
           </CustomCheckBox>
           <CustomButton 
             shape="round"
             type="primary"
             onClick={login}
           >
-        ورود   
+          ورود
           </CustomButton>
         </LoginBox>
       </Style>

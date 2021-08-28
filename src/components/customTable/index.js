@@ -30,7 +30,7 @@ const Customtable = ({
 
   const  fetchData = async(page) =>{
     setLoading(true);
-
+    setData([]);
     try{
       let res = await fetchDatafunc(page);
       const { data : { data , item_count}} = res ;

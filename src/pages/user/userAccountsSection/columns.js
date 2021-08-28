@@ -1,8 +1,11 @@
 import React from 'react';
-import { Tooltip } from "antd";
+import { Tag, Tooltip } from "antd";
+import EditAccountAndLoan from './editAccount';
+import CreateAndEditLoan from './createAndEditLoan';
+import { StyledColActions } from './style';
 
 
-const columns = [
+const columns = setRefreshFlag => [
   {
     title: 'موجودی',
     dataIndex: 'budge',
@@ -21,17 +24,62 @@ const columns = [
     dataIndex: 'card',
     key: 'card',
   },
+
   {
     title: 'وام فعال',
-    dataIndex: 'hasLoan',
-    key: 'hasLoan',
-    render: key => key ? "دارد" : "ندارد",
+    dataIndex: 'current_loan',
+    key: 'current_loan',
+    render: key => key ?
+      <Tag color="red">دارد</Tag>:
+      <Tag color="green">ندارد</Tag>,
+  },
+  {
+    title: 'مبلغ وام',
+    dataIndex: 'current_loan',
+    key: 'current_loan',
+    render: key => key ? 
+      key.total_amount.toLocaleString() + " ريال " :
+      0,
+  },
+  {
+    title: 'مبلغ تسویه شده',
+    dataIndex: 'current_loan',
+    key: 'current_loan',
+    render: key => key ? 
+      key.payed_amount.toLocaleString() + " ريال " :
+      0,
+  },
+  {
+    title: 'مبلغ باقی مانده ',
+    dataIndex: 'current_loan',
+    key: 'current_loan',
+    render: key => key ? 
+      (key.total_amount - key.payed_amount).toLocaleString() + " ريال " :
+      0,
   },
   {
     title: 'شناسه حساب',
     dataIndex: '_id',
     key: '_id',
   },
+  {
+    title: 'عملیات',
+    dataIndex: 'edit_Action',
+    key: 'edit_Action',
+    render : (text  ,account) => {
+      return (
+        <StyledColActions>
+          <EditAccountAndLoan 
+            account={account} 
+            setRefreshFlag={setRefreshFlag}
+          />
+          <CreateAndEditLoan 
+            loan={account.current_loan} 
+            setRefreshFlag={setRefreshFlag}
+          />
+        </StyledColActions>
+      );}
+  }
 ];
 
 
