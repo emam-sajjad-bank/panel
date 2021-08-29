@@ -27,7 +27,7 @@ const UserAccountsSection = ({userData}) =>{
             size={10}
             refreshFlag={refreshFlag}
             fetchDatafunc={page=> getAccountsByUserIdApi(userData._id , page)}
-            columns={columns}
+            columns={columns(()=>setRefreshFlag(!refreshFlag))}
             onRow={()=>{
               return{
                 // onClick :()=>history.push("/user/" +user._id)

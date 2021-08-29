@@ -25,6 +25,9 @@ const SideBar = () =>{
       <NavLink to="/users" exact activeClassName="active">
       لیست کاربران
       </NavLink>
+      <NavLink to="/options" exact activeClassName="active">
+      لیست تنظیمات
+      </NavLink>
     </StyledSideBar>
   );
 };

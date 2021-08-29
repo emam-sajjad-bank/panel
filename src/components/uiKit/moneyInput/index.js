@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import {CustomInputNumber ,CustomPopover} from './style';
 
 const InputMoney = (props , {onChange}) =>{
@@ -46,4 +47,8 @@ const InputMoney = (props , {onChange}) =>{
   );
 };
 
+InputMoney.propTypes = {
+  disabled: PropTypes.bool
+};
+ 
 export default InputMoney;

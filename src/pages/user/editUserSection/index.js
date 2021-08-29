@@ -78,6 +78,18 @@ const EditUserSection = ({userData}) =>{
         >
           <Input />
         </StyledForm.Item>
+        <StyledForm.Item
+          label="شماره شبا"
+          name="sheba_number"
+        >
+          <Input />
+        </StyledForm.Item>
+        <StyledForm.Item
+          label="شماره کارت"
+          name="bank_account"
+        >
+          <Input />
+        </StyledForm.Item>
         <div />
         <Button 
           type="primary" 
