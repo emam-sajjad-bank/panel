@@ -32,7 +32,6 @@ const CreateAndEditLoan = ({account , setRefreshFlag }) =>{
       form.resetFields();
       setCloseFlag(!closeFlag);
     }catch(err){
-
     }
   };
 
