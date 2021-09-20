@@ -21,8 +21,14 @@ export const getUserByIdApi = async id => {
   
 
 export const addUserApi = async data => {
+  let finalData = {...data};
+  for (var propName in finalData) {
+    if (finalData[propName] === "") {
+      delete finalData[propName];
+    }
+  }
   try {
-    let res = await axiosInstance.post(`${role()}/users/register-user` , data);
+    let res = await axiosInstance.post(`${role()}/users/register-user` , finalData);
     return res;
   } catch (error) {
     throw error;

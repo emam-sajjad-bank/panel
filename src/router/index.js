@@ -36,7 +36,7 @@ const MainRouter = () => {
         <PrivetRoute>
           <MainHOC >
             <h1>
-            hi
+              صندوق قرض الحسنه امام سجاد علیه السلام
             </h1>
           </MainHOC>
         </PrivetRoute>

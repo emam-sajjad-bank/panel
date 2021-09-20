@@ -2,10 +2,12 @@ import React from 'react';
 import { Tag, Tooltip } from "antd";
 import EditAccountAndLoan from './editAccount';
 import CreateAndEditLoan from './createAndEditLoan';
+import DeleteLoan from './deleteLoan';
 import { StyledColActions } from './style';
+import PaymentModal from './payment';
 
 
-const columns = setRefreshFlag => [
+const columns = (setRefreshFlag , options) => [
   {
     title: 'موجودی',
     dataIndex: 'budge',
@@ -58,26 +60,35 @@ const columns = setRefreshFlag => [
       0,
   },
   {
-    title: 'شناسه حساب',
-    dataIndex: '_id',
-    key: '_id',
-  },
-  {
     title: 'عملیات',
     dataIndex: 'edit_Action',
     key: 'edit_Action',
     render : (text  ,account) => {
       return (
         <StyledColActions>
+
           <EditAccountAndLoan 
             account={account} 
             setRefreshFlag={setRefreshFlag}
           />
-          <CreateAndEditLoan 
-            account={account} 
+          {account.current_loan ?
+            <DeleteLoan 
+              loan={account.current_loan}
+              setRefreshFlag={setRefreshFlag}
+            /> :
+            <CreateAndEditLoan 
+              account={account} 
+              setRefreshFlag={setRefreshFlag}
+              option={options.LOAN_AMOUNT}
+            />
+          }
+          <PaymentModal 
             setRefreshFlag={setRefreshFlag}
+            account={account}
+            option={options.BUDGE_MONTHLY_INCREASE}
           />
         </StyledColActions>
+
       );}
   }
 ];

@@ -5,16 +5,19 @@ const columns = [
     title: 'نام کاربری',
     dataIndex: 'username',
     key: 'username',
+    fixed : "left"
   },
   {
     title: 'نام',
     dataIndex: 'first_name',
     key: 'first_name',
+    fixed : "left"
   },
   {
     title: 'نام خانوادگی',
     dataIndex: 'last_name',
     key: 'last_name',
+    fixed : "left"
   },
   {
     title: 'شماره تماس',
@@ -30,22 +33,7 @@ const columns = [
     title: 'شماره شناسنامه',
     dataIndex: 'identity_code',
     key: 'identity_code',
-  },
-  {
-    title: 'شماره کارت',
-    dataIndex: 'bank_account',
-    key: 'bank_account',
-  },
-  {
-    title: 'شماره شبا',
-    dataIndex: 'sheba_number',
-    key: 'sheba_number',
-  },
-  {
-    title: 'شناسه کاربر',
-    dataIndex: '_id',
-    key: '_id',
-  },
+  }
 ];
 
 

@@ -2,36 +2,27 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Input, Space } from 'antd';
-import { useHistory } from 'react-router';
 //components
 import GlobalModal from '../../../../components/globalModal';
 import ErrorAndAlert from '../../../../components/errorNAlert';
 //utils
-import { createLoanApi, updateLoanApi } from '../../../../utils/API/loans';
+import { createLoanApi } from '../../../../utils/API/loans';
 //styles
 import { StyledForm } from './style';
 
 
-
-
-
-
-
-
-const CreateAndEditLoan = ({account , setRefreshFlag }) =>{
+const CreateAndEditLoan = ({account , setRefreshFlag ,option}) =>{
   const [closeFlag, setCloseFlag] = useState(false);
   const [form] = StyledForm.useForm();
-  const history = useHistory();
-  console.log(account);
-  const addOrEditLoan = async values =>{
+  const addLoan = async values =>{
     try{
-      if(account.current_loan) await updateLoanApi(account.current_loan._id , values);
-      else await createLoanApi({...values , account:account._id});
+      await createLoanApi({...values , account:account._id});
       setRefreshFlag();
       ErrorAndAlert({message: "تغییرات با موفقیت ذخیره شد"});
       form.resetFields();
       setCloseFlag(!closeFlag);
     }catch(err){
+      throw err;
     }
   };
 
@@ -50,12 +41,20 @@ const CreateAndEditLoan = ({account , setRefreshFlag }) =>{
         onOk : ()=>form.submit(),
       }}
       buttonProps={{
-        text:"وام"
+        text:(account.current_loan ? 
+          "ویرایش" : 
+          "افزودن") +
+          " وام "
       }}
     >
+      <h2>
+        وام اصلی به مبلغ : {" "}
+        {option &&  (option.value * 1 ).toLocaleString() }{" "}
+        ريال
+      </h2>
       <StyledForm
         form={form}
-        onFinish={values=>addOrEditLoan(values)}
+        onFinish={values=>addLoan(values)}
         initialValues={account.current_loan}
       >
         <StyledForm.Item
@@ -96,7 +95,6 @@ const CreateAndEditLoan = ({account , setRefreshFlag }) =>{
           )}
         </StyledForm.List>
         <StyledForm.Item >
-
         </StyledForm.Item>
       </StyledForm>
 
@@ -106,6 +104,7 @@ const CreateAndEditLoan = ({account , setRefreshFlag }) =>{
  
 CreateAndEditLoan.propTypes = {
   account: PropTypes.object,
+  option: PropTypes.object,
   setRefreshFlag: PropTypes.func,
   accountId: PropTypes.string,
 };

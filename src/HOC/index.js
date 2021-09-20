@@ -1,5 +1,5 @@
 //node modules
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Header from "./header";
 import SideBar from "./sideBar";
@@ -14,6 +14,8 @@ import { StyledContainer } from "./style";
 
 const MainHOC = ({ children }) => {
   const history = useHistory();
+
+  const [menuIsActive, setMenuIsActive] = useState(false);
   
   return (
     <>
@@ -21,10 +23,12 @@ const MainHOC = ({ children }) => {
         history.location.pathname === "/login" ?
           <>{children}</> :
           <>
-            <Header />
-            <SideBar />
+            <Header setMenuIsActive={setMenuIsActive} />
+            <SideBar menuIsActive={menuIsActive} />
             <StyledContainer>
-              {children}
+              <div>
+                {children}
+              </div>
             </StyledContainer>
           </>
       }

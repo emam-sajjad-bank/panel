@@ -9,7 +9,7 @@ const InputMoney = (props , {onChange}) =>{
 
   useEffect(() => {
     !props.disabled ? ( 
-      value.replace(/\$\s?|(,*)/g, '') > 0 ?
+      `${value}`.replace(/\$\s?|(,*)/g, '') > 0 ?
         setVisible(true) :
         setVisible(false)
     ) : 
@@ -35,7 +35,7 @@ const InputMoney = (props , {onChange}) =>{
           style={{width:'100%'}}
           formatter={val => {
             setValue(`${Math.floor(val/10)}`.replace(/\B(?=(\d{3})+(?!\d))/g, ','));
-            onChange && onChange(val);
+            onChange && onChange(val *1);
             return`${val}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
           }
           }

@@ -4,20 +4,17 @@ import { Form } from 'antd';
 
 
 const StyledForm = Styled(Form)`
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 2% 5%;
+    display: flex;
+    justify-content: space-between;
     .ant-form-item-label{
         width: 50%;
     }
-    & > button{
-        width: max-content;
-        justify-self: left;
-
+    .ant-form-item{
+        width:100%;
+    }
+    button{
+        margin: 0 1rem;
     }
 `;
-
-
-
+ 
 export {StyledForm};

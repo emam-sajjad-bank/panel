@@ -4,7 +4,17 @@ import ErrorAndAlert from "../../components/errorNAlert";
 import history from "../../router/history";
 
 // eslint-disable-next-line no-undef
-let baseURL = "http://localhost:3000";
+const mode = process.env.REACT_APP_MODE.trim();
+let baseURL ;
+
+// eslint-disable-next-line no-undef
+if(mode === "prod"){
+  baseURL = "https://emam-sajjad-bank.com";
+}else{
+  baseURL = "";
+}
+
+console.log(mode , mode === "prod" , baseURL);
 const token = () => localStorage.getItem("token");
 
 

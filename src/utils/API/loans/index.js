@@ -9,9 +9,10 @@ export const createLoanApi = async data => {
     throw error;
   }
 };
-export const updateLoanApi = async (loan_id, data) => {
+
+export const deleteLoanApi = async (loan_id) => {
   try {
-    let res = await axiosInstance.put(`${role()}/loans/${loan_id}` , data);
+    let res = await axiosInstance.delete(`${role()}/loans/${loan_id}` );
     return res;
   } catch (error) {
     throw error;

@@ -11,13 +11,13 @@ import { StyledSideBar } from './style';
 
 
 
-const SideBar = () =>{
+const SideBar = ({menuIsActive}) =>{
   return(
-    <StyledSideBar>
+    <StyledSideBar menuIsActive={menuIsActive}>
       <div className="welcome">
-        {"داود هبابی"}
+        {/* {"داود هبابی"} */}
         {" "}
-        عزیز خوش آمدید
+         خوش آمدید
       </div> 
       <NavLink to="/" exact activeClassName="active">
       صفحه اصلی
@@ -33,7 +33,7 @@ const SideBar = () =>{
 };
  
 SideBar.propTypes = {
-  data: PropTypes.any
+  menuIsActive: PropTypes.bool
 };
  
 export default SideBar;

@@ -11,9 +11,10 @@ export const getOptionsApi = async () => {
 };
 export const updateOptionsApi = async data => {
   try {
-    let res = await axiosInstance.get(`${role()}/options/${data._id}` , {
+    let res = await axiosInstance.put(`${role()}/options/${data._id}` , {
       name : data.name,
-      value: data.value
+      value: data.value,
+      key: data.key,
     });
     return res;
   } catch (error) {

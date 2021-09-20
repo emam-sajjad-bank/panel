@@ -1,9 +1,9 @@
 //node modules
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Input } from 'antd';
+import { Button } from 'antd';
 //components
-import { CustomSection } from '../../components/uiKit';
+import { CustomSection, InputMoney } from '../../components/uiKit';
 import ErrorAndAlert from '../../components/errorNAlert';
 //utils
 import { getOptionsApi, updateOptionsApi } from '../../utils/API/options';
@@ -21,7 +21,6 @@ const OptionsPage = () =>{
       
     const res = await getOptionsApi();
     setOptions(res.data.data);
-
   };
 
   const editOptions = async values =>{
@@ -61,7 +60,7 @@ const OptionsPage = () =>{
             label={option.name}
             name="value"
           >
-            <Input />
+            <InputMoney />
           </StyledForm.Item>
           <Button 
             type="primary" 
